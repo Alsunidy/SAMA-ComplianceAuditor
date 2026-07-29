@@ -1,0 +1,35 @@
+# --- Core RAG pipeline ---
+chromadb==1.5.9
+rank-bm25==0.2.2
+fastembed==0.8.0
+onnxruntime==1.23.2
+numpy==2.2.6
+
+# --- LLM (judge) ---
+groq==0.37.1
+
+# --- PDF report generation (task #7) ---
+reportlab==4.5.1
+
+# --- PDF/DOCX/image evidence ingestion (company evidence uploads) ---
+pymupdf==1.28.0
+pdfplumber==0.11.9
+python-docx==1.2.0
+pytesseract==0.3.13
+Pillow==11.3.0
+# pytesseract also requires the Tesseract OCR binary to be installed
+# separately (it is NOT a pip package):
+#   Windows: install from https://github.com/UB-Mannheim/tesseract/wiki
+#            and make sure tesseract.exe is on PATH
+#   macOS:   brew install tesseract
+#   Linux:   sudo apt install tesseract-ocr
+
+# --- API + UI ---
+fastapi==0.139.2
+uvicorn==0.51.0
+streamlit==1.59.2
+python-multipart==0.0.32
+python-dotenv==1.2.2
+requests==2.34.2
+pandas==2.3.3
+jinja2>=3.1.2
