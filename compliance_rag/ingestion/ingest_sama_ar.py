@@ -118,8 +118,9 @@ for raw_line in lines:
     if clean == "اعتبارات التحكم":
         mode = "considerations"
         continue
-    if re.match(r'^\d+\.$', clean):
-        # bullet number line like "1." on its own (Arabic list numbering artifact)
+    if re.match(r'^\d+\.$', clean) or re.match(r'^\.\d+$', clean):
+        # bullet number line like "1." on its own (Arabic list numbering artifact).
+        # The extraction sometimes reverses this to ".1", so both orders are skipped.
         continue
 
     if mode == "principle":
